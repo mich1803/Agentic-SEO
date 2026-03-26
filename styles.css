@@ -52,3 +52,4 @@ input, select {
   overflow: hidden;
 }
 #progress-bar { width: 0%; height: 100%; background: #111827; }
+#download-output { margin-top: 12px; }
