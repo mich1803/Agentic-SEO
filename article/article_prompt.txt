@@ -1,33 +1,26 @@
 {Input}
--(Codice_Articolo) Codice Articolo: [INSERISCI]
--(Nome) Nome prodotto: [INSERISCI]
--(Brand) (opzionale): [INSERISCI]
--(Categoria_1) Gruppo: (opzionale): [INSERISCI]
--(Categoria_2) Categoria (opzionale): [INSERISCI]
--(Categoria_3) Sottocategoria (opzionale): [INSERISCI]
--(Descrizione) Descrizione esistente (opzionale): [INSERIRE]
--(Scheda_Tecnica) scheda tecnica PDF (opzionale): [INSERIRE]
 
+{{INPUT_BLOCK}}
 
 {Output Richiesto}
 [Descrizione-HTML] --STILE HTML--
 Creare una descrizione prodotto altamente ottimizzata per:
 -posizionamento su Google (SEO tradizionale)
--visibilit‡ nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
+-visibilit√† nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
 -conversione utente (vendita)
 
 
 [Istruzioni-HTML] --STILE HTML--
 Creare una descrizione Aggiuntiva con istruzioni di uso dell'articolo e dei consigli sull'utilizzodel prodotto altamente ottimizzata per:
 -posizionamento su Google (SEO tradizionale)
--visibilit‡ nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
+-visibilit√† nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
 -conversione utente (vendita)
 
 
 [Dettagli-HTML] --STILE HTML--
 Creare una descrizione Dettagli ulteriori informazioni utili sul prodotto:
 -posizionamento su Google (SEO tradizionale)
--visibilit‡ nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
+-visibilit√† nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
 -conversione utente (vendita)
 
 
@@ -68,7 +61,7 @@ OBIETTIVO FINALE:
 Creare una meta description che:
 - aumenti il click nei risultati di ricerca
 - sia coerente con il contenuto della pagina
-- migliori la visibilit‡ anche nelle AI
+- migliori la visibilit√† anche nelle AI
 
 [Titolo_Tag]
 Generare il miglior Title Tag possibile per una pagina prodotto o categoria, ottimizzato per:
@@ -94,7 +87,7 @@ REGOLE OBBLIGATORIE:
 - Deve far capire subito cosa vende
 
 4. OTTIMIZZAZIONE AI SEARCH
-- Evitare ambiguit‡
+- Evitare ambiguit√†
 - Usare termini chiari e descrittivi
 - Inserire sinonimi naturali se utili
 
@@ -114,21 +107,13 @@ Creare un Title Tag che:
 - sia perfettamente leggibile e naturale
 
 
-Formato Output:
-JSON con chiave principale "OUTPUT"
-
 esempio:
 {
   "OUTPUT": {
-    "Descrizione-HTML": "Output --HTML-- del campo Descrizione-HTML",
-
-    "Istruzioni-HTML": "Output --HTML-- del campo Istruzioni-HTML",
-
-    "Dettagli-HTML": "Output --HTML-- del campo Dettagli-HTML",
-
-    "Descrizione_Tag": "Output del campo Descrzione_Tag",
-
-    "Titolo_Tag": "Output del campo Titolo_Tag"
+    "Descrizione-HTML": "...",
+    "Istruzioni-HTML": "...",
+    "Dettagli-HTML": "...",
+    "Descrizione_Tag": "...",
+    "Titolo_Tag": "..."
   }
 }
-

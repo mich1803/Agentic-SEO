@@ -1,26 +1,20 @@
 {Input}
--(Categoria_1) Gruppo: [INSERISCI]
--(Categoria_2) Categoria (opzionale): [INSERISCI]
--(Categoria_3) Sottocategoria (opzionale): [INSERISCI]
--(Brand) Brand (opzionale):
--(Descrizione) Descrizione esistente: [INSERIRE]
+
+{{INPUT_BLOCK}}
 
 Nota:
--Se hai in input solo Categoria_1: scrivi una descrizione solo per Categoria_1 (Gruppo), concepita come pagina madre generale, con taglio introduttivo, informativo e SEO. Il testo dovrà essere utile come contenitore delle future Categoria_2, senza scendere troppo in dettagli specifici di singoli prodotti.
--Se hai in input Categoria_1 e Categoria_2: scrivi una descrizione focalizzata soprattutto su Categoria_2, mantenendo coerenza con Categoria_1. Il testo dovrà spiegare in modo chiaro a cosa serve questa categoria, quali prodotti comprende, per quali utilizzi è adatta, quali benefici offre e in quali contesti viene scelta. Categoria_1 dovrà funzionare come contesto generale, mentre Categoria_2 sarà il vero focus SEO e informativo della pagina.
--Se hai in input Categoria_1, Categoria_2 e Categoria_3: scrivi una descrizione specifica per Categoria_3, trattandola come livello più verticale e preciso della navigazione. Il testo dovrà essere più mirato, concreto e orientato all’intento di ricerca dell’utente, spiegando caratteristiche, destinazioni d’uso, vantaggi, applicazioni tipiche e differenze implicite rispetto ad altre sottocategorie vicine. Categoria_1 e Categoria_2 dovranno essere richiamate solo come contesto semantico.
--Se hai in input Categoria_1, Categoria_2, Categoria_3 e Brand: scrivi una descrizione altamente focalizzata sulla combinazione tra Categoria_3 e brand, mettendo in evidenza il posizionamento del marchio, i punti di forza, la tipologia di offerta, gli eventuali elementi distintivi del brand in quella specifica categoria e il valore percepito per l’utente finale. Il testo dovrà risultare naturale, informativo e commerciale, senza tono eccessivamente promozionale.
-
+-Se hai in input solo Categoria_1: scrivi una descrizione solo per Categoria_1 (Gruppo), concepita come pagina madre generale, con taglio introduttivo, informativo e SEO. Il testo dovrÃ  essere utile come contenitore delle future Categoria_2, senza scendere troppo in dettagli specifici di singoli prodotti.
+-Se hai in input Categoria_1 e Categoria_2: scrivi una descrizione focalizzata soprattutto su Categoria_2, mantenendo coerenza con Categoria_1. Il testo dovrÃ  spiegare in modo chiaro a cosa serve questa categoria, quali prodotti comprende, per quali utilizzi Ã¨ adatta, quali benefici offre e in quali contesti viene scelta. Categoria_1 dovrÃ  funzionare come contesto generale, mentre Categoria_2 sarÃ  il vero focus SEO e informativo della pagina.
+-Se hai in input Categoria_1, Categoria_2 e Categoria_3: scrivi una descrizione specifica per Categoria_3, trattandola come livello piÃ¹ verticale e preciso della navigazione. Il testo dovrÃ  essere piÃ¹ mirato, concreto e orientato allâ€™intento di ricerca dellâ€™utente, spiegando caratteristiche, destinazioni dâ€™uso, vantaggi, applicazioni tipiche e differenze implicite rispetto ad altre sottocategorie vicine. Categoria_1 e Categoria_2 dovranno essere richiamate solo come contesto semantico.
+-Se hai in input Categoria_1, Categoria_2, Categoria_3 e Brand: scrivi una descrizione altamente focalizzata sulla combinazione tra Categoria_3 e brand, mettendo in evidenza il posizionamento del marchio, i punti di forza, la tipologia di offerta, gli eventuali elementi distintivi del brand in quella specifica categoria e il valore percepito per lâ€™utente finale. Il testo dovrÃ  risultare naturale, informativo e commerciale, senza tono eccessivamente promozionale.
 
 {Output}
 
-
 [Categoria-HTML]
-
 OBIETTIVO:
 Creare una descrizione di categoria altamente performante per:
 - posizionamento su Google (SEO tradizionale)
-- visibilità nelle AI (ChatGPT, Gemini, Perplexity)
+- visibilitÃ  nelle AI (ChatGPT, Gemini, Perplexity)
 - conversione utente (vendita)
 
 Il contenuto deve trasformare la categoria in una guida completa, diventando un punto di riferimento informativo (stile "Aranzulla del Brico").
@@ -36,14 +30,14 @@ INTRODUZIONE (150-250 parole)
 - Per chi sono ideali
 - Inserire benefici concreti
 - Inserire frasi tipo:
-  "ideale per…"
-  "perfetto per chi…"
-  "consigliato in caso di…"
+  "ideale perâ€¦"
+  "perfetto per chiâ€¦"
+  "consigliato in caso diâ€¦"
 
 H2: Cosa sono e a cosa servono
 - Definizione semplice
 - Problemi che risolvono
-- Perché sono importanti
+- PerchÃ© sono importanti
 
 H2: Come scegliere il prodotto giusto
 - Guida pratica
@@ -61,12 +55,12 @@ H2: Applicazioni pratiche (casi reali)
 - Settori (artigiani, industria, fai da te, ecc.)
 
 H2: Vantaggi rispetto ad alternative
-- Perché scegliere questa categoria
+- PerchÃ© scegliere questa categoria
 - Confronto implicito con soluzioni alternative
 
 H2: Brand principali (se presente brand)
 - Posizionare il brand nel contesto
-- Perché sceglierlo
+- PerchÃ© sceglierlo
 - Differenze rispetto ad altri brand
 
 H2: Consigli pratici di utilizzo
@@ -81,7 +75,7 @@ H2: FAQ (minimo 6-8 domande)
 
 EXTRA (FONDAMENTALE)
 - Inserire concetti educativi
-- Spiegare il "perché" oltre al "cosa"
+- Spiegare il "perchÃ©" oltre al "cosa"
 - Anticipare dubbi dell'utente
 - Rispondere anche a domande non esplicite
 
@@ -109,8 +103,7 @@ JSON con chiave principale "OUTPUT"
 esempio:
 {
   "OUTPUT": {
-    "Categoria-HTML": "Output --HTML-- del campo Categoria-HTML",
-
-    "Alt_Categoria-HTML": "Output --HTML-- del campo Alt_Categoria-HTML"
+    "Categoria-HTML": "...",
+    "Alt_Categoria-HTML": "..."
   }
 }

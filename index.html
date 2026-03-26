@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentic SEO Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <section id="home" class="card">
+        <h1>Generatore SEO</h1>
+        <p>Seleziona il flusso che vuoi avviare.</p>
+        <div class="actions">
+          <button data-target="article-section">Genera Contenuti per Articolo</button>
+          <button data-target="category-section">Genera Contenuti per Categoria</button>
+        </div>
+      </section>
+
+      <section id="article-section" class="card hidden">
+        <button class="back">← Home</button>
+        <h2>Genera Contenuti per Articolo</h2>
+        <p>
+          Carica il template compilato. L'app processa ogni riga, invia i prompt ad OpenAI,
+          valida il JSON di risposta e riscrive le colonne output nel file finale.
+        </p>
+        <a class="link-btn" href="article/article_template.xlsx" download>Scarica template articoli</a>
+        <form id="article-form" data-mode="article">
+          <label>Modello
+            <select name="model" required>
+              <option value="gpt-4.1-mini">OpenAI - gpt-4.1-mini</option>
+            </select>
+          </label>
+          <label>OpenAI API Key
+            <input type="password" name="apiKey" placeholder="sk-..." required />
+          </label>
+          <label>Template compilato (.xlsx)
+            <input type="file" name="file" accept=".xlsx" required />
+          </label>
+          <button type="submit">Genera file output</button>
+        </form>
+      </section>
+
+      <section id="category-section" class="card hidden">
+        <button class="back">← Home</button>
+        <h2>Genera Contenuti per Categoria</h2>
+        <p>
+          Carica il template compilato. Per ogni riga vengono creati i contenuti SEO categoria e
+          aggiornati i campi nel medesimo Excel.
+        </p>
+        <a class="link-btn" href="category/category_template.xlsx" download>Scarica template categorie</a>
+        <form id="category-form" data-mode="category">
+          <label>Modello
+            <select name="model" required>
+              <option value="gpt-4.1-mini">OpenAI - gpt-4.1-mini</option>
+            </select>
+          </label>
+          <label>OpenAI API Key
+            <input type="password" name="apiKey" placeholder="sk-..." required />
+          </label>
+          <label>Template compilato (.xlsx)
+            <input type="file" name="file" accept=".xlsx" required />
+          </label>
+          <button type="submit">Genera file output</button>
+        </form>
+      </section>
+
+      <section id="status" class="card hidden">
+        <h3>Elaborazione in corso</h3>
+        <div class="spinner"></div>
+        <p id="status-text">In attesa...</p>
+        <div class="progress-wrap"><div id="progress-bar"></div></div>
+      </section>
+    </main>
+  </body>
+</html>
