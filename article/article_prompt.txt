@@ -1,118 +1,23 @@
 {Input}
--(Codice_Articolo) Codice Articolo: [INSERISCI]
--(Nome) Nome prodotto: [INSERISCI]
--(Brand) (opzionale): [INSERISCI]
--(Categoria_1) Gruppo: (opzionale): [INSERISCI]
--(Categoria_2) Categoria (opzionale): [INSERISCI]
--(Categoria_3) Sottocategoria (opzionale): [INSERISCI]
--(Descrizione) Descrizione esistente (opzionale): [INSERIRE]
--(Scheda_Tecnica) scheda tecnica PDF (opzionale): [INSERIRE]
+Usa solo i campi disponibili qui sotto. Se un campo non Ã¨ presente, ignoralo completamente senza citarlo.
 
+{{INPUT_BLOCK}}
 
 {Output Richiesto}
 [Descrizione-HTML] --STILE HTML--
-Creare una descrizione prodotto altamente ottimizzata per:
--posizionamento su Google (SEO tradizionale)
--visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
--conversione utente (vendita)
-
+Creare una descrizione prodotto altamente ottimizzata per SEO, AI search e conversione.
 
 [Istruzioni-HTML] --STILE HTML--
-Creare una descrizione Aggiuntiva con istruzioni di uso dell'articolo e dei consigli sull'utilizzodel prodotto altamente ottimizzata per:
--posizionamento su Google (SEO tradizionale)
--visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
--conversione utente (vendita)
-
+Creare una descrizione aggiuntiva con istruzioni d'uso e consigli pratici ottimizzata per SEO, AI search e conversione.
 
 [Dettagli-HTML] --STILE HTML--
-Creare una descrizione Dettagli ulteriori informazioni utili sul prodotto:
--posizionamento su Google (SEO tradizionale)
--visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
--conversione utente (vendita)
-
+Creare una sezione di dettagli con informazioni utili e concrete sul prodotto.
 
 [Descrizione_Tag] --ALTRO--
-Generare la migliore Meta Description (Descrizione Tag) possibile per una pagina prodotto, ottimizzata per:
-- aumentare il CTR su Google
-- migliorare la rilevanza SEO
-- essere comprensibile e citabile dalle AI (ChatGPT, Gemini, Perplexity)
+Meta description tra 140 e 160 caratteri, con keyword naturale, beneficio e contesto d'uso.
 
-REGOLE OBBLIGATORIE:
-
-1. LUNGHEZZA
-- La meta description deve essere tra 140 e 160 caratteri
-- Evitare troncamenti nei risultati Google
-
-2. STRUTTURA SEO + CTR
-- Iniziare con un verbo d'azione (es: Scopri, Scegli, Trova, Acquista)
-- Inserire la keyword principale in modo naturale
-- Inserire un beneficio concreto
-- Inserire un contesto d'uso (es: imballaggi, professionale, fai da te)
-
-3. OTTIMIZZAZIONE AI SEARCH
-- Linguaggio chiaro e diretto
-- Frasi facilmente comprensibili e citabili
-- Inserire una micro-spiegazione implicita del prodotto
-
-4. STILE
-- Naturale, umano, non artificiale
-- Evitare frasi generiche o ripetitive
-- Evitare keyword stuffing
-
-5. EVITARE:
-- Tutto maiuscolo
-- Simboli inutili (! ? ecc.)
-- Frasi troppo promozionali o aggressive
-
-OBIETTIVO FINALE:
-Creare una meta description che:
-- aumenti il click nei risultati di ricerca
-- sia coerente con il contenuto della pagina
-- migliori la visibilità anche nelle AI
-
-[Titolo_Tag]
-Generare il miglior Title Tag possibile per una pagina prodotto o categoria, ottimizzato per:
-- posizionamento su Google
-- massimizzazione del CTR (click)
-- comprensione da parte delle AI (ChatGPT, Gemini, Perplexity)
-
-REGOLE OBBLIGATORIE:
-
-1. LUNGHEZZA
-- Il titolo deve essere tra 50 e 60 caratteri (massimo 60)
-- Deve essere leggibile senza troncamenti su Google
-
-2. STRUTTURA SEO
-- Inserire la keyword principale all'inizio
-- Inserire una specifica tecnica o caratteristica
-- Inserire un contesto d'uso (es: imballaggio, professionale, manuale)
-- Inserire il brand SOLO se utile
-
-3. OTTIMIZZAZIONE CTR
-- Il titolo deve sembrare scritto da un umano, non da un algoritmo
-- Deve essere chiaro, diretto e comprensibile
-- Deve far capire subito cosa vende
-
-4. OTTIMIZZAZIONE AI SEARCH
-- Evitare ambiguità
-- Usare termini chiari e descrittivi
-- Inserire sinonimi naturali se utili
-
-5. EVITARE ASSOLUTAMENTE:
-- Keyword stuffing
-- Frasi generiche (es: "miglior prodotto")
-- Tutto maiuscolo
-- Simboli inutili (!, ?, ecc.)
-
-OUTPUT RICHIESTO:
-
-
-OBIETTIVO FINALE:
-Creare un Title Tag che:
-- si posizioni su Google
-- aumenti il CTR
-- sia perfettamente leggibile e naturale
-
+[Titolo_Tag] --ALTRO--
+Title tag tra 50 e 60 caratteri, leggibile, naturale, con keyword principale all'inizio.
 
 Formato Output:
 JSON con chiave principale "OUTPUT"
@@ -120,15 +25,10 @@ JSON con chiave principale "OUTPUT"
 esempio:
 {
   "OUTPUT": {
-    "Descrizione-HTML": "Output --HTML-- del campo Descrizione-HTML",
-
-    "Istruzioni-HTML": "Output --HTML-- del campo Istruzioni-HTML",
-
-    "Dettagli-HTML": "Output --HTML-- del campo Dettagli-HTML",
-
-    "Descrizione_Tag": "Output del campo Descrzione_Tag",
-
-    "Titolo_Tag": "Output del campo Titolo_Tag"
+    "Descrizione-HTML": "...",
+    "Istruzioni-HTML": "...",
+    "Dettagli-HTML": "...",
+    "Descrizione_Tag": "...",
+    "Titolo_Tag": "..."
   }
 }
-
