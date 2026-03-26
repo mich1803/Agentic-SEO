@@ -17,6 +17,8 @@ const sections = {
 
 const statusText = document.getElementById("status-text");
 const progressBar = document.getElementById("progress-bar");
+const statusSpinner = document.getElementById("status-spinner");
+const downloadOutputBtn = document.getElementById("download-output");
 
 document.querySelectorAll("button[data-target]").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -73,6 +75,10 @@ async function handleSubmit(event, mode) {
   }
 
   sections.status.classList.remove("hidden");
+  statusSpinner.classList.remove("hidden");
+  downloadOutputBtn.classList.add("hidden");
+  downloadOutputBtn.removeAttribute("href");
+  downloadOutputBtn.removeAttribute("download");
 
   const headers = rows[0].map((v) => String(v || "").trim());
   const headerIndex = new Map(headers.map((h, i) => [h, i]));
@@ -126,8 +132,24 @@ async function handleSubmit(event, mode) {
 
   const outWs = XLSX.utils.aoa_to_sheet(rows);
   workbook.Sheets[sheetName] = outWs;
-  XLSX.writeFile(workbook, `${mode}_output_${Date.now()}.xlsx`);
-  statusText.textContent = "Completato. File generato e scaricato.";
+
+  const outputName = `${mode}_output_${Date.now()}.xlsx`;
+  const outArray = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+  const outBlob = new Blob([outArray], {
+    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  });
+  const outUrl = URL.createObjectURL(outBlob);
+
+  if (downloadOutputBtn.dataset.objectUrl) {
+    URL.revokeObjectURL(downloadOutputBtn.dataset.objectUrl);
+  }
+
+  downloadOutputBtn.href = outUrl;
+  downloadOutputBtn.download = outputName;
+  downloadOutputBtn.dataset.objectUrl = outUrl;
+  downloadOutputBtn.classList.remove("hidden");
+  statusSpinner.classList.add("hidden");
+  statusText.textContent = "Completato. File generato.";
 }
 
 async function callOpenAI({ model, apiKey, systemPrompt, userPrompt }) {
