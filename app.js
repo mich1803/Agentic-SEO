@@ -220,13 +220,30 @@ function isLikelyUrlOnly(text) {
 
 async function fetchUrlText(url) {
   try {
-    const response = await fetch(`https://r.jina.ai/http://${url.replace(/^https?:\/\//i, "")}`);
+    // Normalizza URL (aggiunge https se manca)
+    let normalizedUrl = url.trim();
+    if (!/^https?:\/\//i.test(normalizedUrl)) {
+      normalizedUrl = `https://${normalizedUrl}`;
+    }
+
+    // Costruzione endpoint Jina senza rompere il protocollo
+    const response = await fetch(`https://r.jina.ai/${normalizedUrl}`);
+
     if (!response.ok) {
       return url;
     }
+
     const text = (await response.text()).trim();
-    return text.slice(0, 12000) || url;
-  } catch {
+
+    // Fallback se contenuto vuoto
+    if (!text) {
+      return url;
+    }
+
+    // Limite sicurezza lunghezza
+    return text.slice(0, 12000);
+
+  } catch (error) {
     return url;
   }
 }

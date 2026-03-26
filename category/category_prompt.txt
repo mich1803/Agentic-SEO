@@ -1,20 +1,101 @@
 {Input}
-Usa solo i campi disponibili qui sotto. Se un campo non è presente, ignoralo completamente senza citarlo.
 
 {{INPUT_BLOCK}}
 
 Nota:
-- Se hai solo Categoria_1: crea testo introduttivo generale.
-- Se hai Categoria_1 + Categoria_2: focalizza su Categoria_2 nel contesto di Categoria_1.
-- Se hai Categoria_1 + Categoria_2 + Categoria_3: focalizza su Categoria_3 in modo verticale.
-- Se è presente anche Brand: integra il posizionamento del brand in quella categoria.
+-Se hai in input solo Categoria_1: scrivi una descrizione solo per Categoria_1 (Gruppo), concepita come pagina madre generale, con taglio introduttivo, informativo e SEO. Il testo dovrà essere utile come contenitore delle future Categoria_2, senza scendere troppo in dettagli specifici di singoli prodotti.
+-Se hai in input Categoria_1 e Categoria_2: scrivi una descrizione focalizzata soprattutto su Categoria_2, mantenendo coerenza con Categoria_1. Il testo dovrà spiegare in modo chiaro a cosa serve questa categoria, quali prodotti comprende, per quali utilizzi è adatta, quali benefici offre e in quali contesti viene scelta. Categoria_1 dovrà funzionare come contesto generale, mentre Categoria_2 sarà il vero focus SEO e informativo della pagina.
+-Se hai in input Categoria_1, Categoria_2 e Categoria_3: scrivi una descrizione specifica per Categoria_3, trattandola come livello più verticale e preciso della navigazione. Il testo dovrà essere più mirato, concreto e orientato all’intento di ricerca dell’utente, spiegando caratteristiche, destinazioni d’uso, vantaggi, applicazioni tipiche e differenze implicite rispetto ad altre sottocategorie vicine. Categoria_1 e Categoria_2 dovranno essere richiamate solo come contesto semantico.
+-Se hai in input Categoria_1, Categoria_2, Categoria_3 e Brand: scrivi una descrizione altamente focalizzata sulla combinazione tra Categoria_3 e brand, mettendo in evidenza il posizionamento del marchio, i punti di forza, la tipologia di offerta, gli eventuali elementi distintivi del brand in quella specifica categoria e il valore percepito per l’utente finale. Il testo dovrà risultare naturale, informativo e commerciale, senza tono eccessivamente promozionale.
 
 {Output}
+
 [Categoria-HTML]
-Descrizione categoria completa, SEO-oriented, utile per utenti e AI, con struttura H1/H2, guide pratiche, applicazioni, vantaggi e FAQ.
+OBIETTIVO:
+Creare una descrizione di categoria altamente performante per:
+- posizionamento su Google (SEO tradizionale)
+- visibilità nelle AI (ChatGPT, Gemini, Perplexity)
+- conversione utente (vendita)
+
+Il contenuto deve trasformare la categoria in una guida completa, diventando un punto di riferimento informativo (stile "Aranzulla del Brico").
+
+
+STRUTTURA OBBLIGATORIA
+
+H1: Nome categoria ottimizzato SEO (includere brand se presente)
+
+INTRODUZIONE (150-250 parole)
+- Spiegare cosa sono i prodotti della categoria
+- A cosa servono
+- Per chi sono ideali
+- Inserire benefici concreti
+- Inserire frasi tipo:
+  "ideale per…"
+  "perfetto per chi…"
+  "consigliato in caso di…"
+
+H2: Cosa sono e a cosa servono
+- Definizione semplice
+- Problemi che risolvono
+- Perché sono importanti
+
+H2: Come scegliere il prodotto giusto
+- Guida pratica
+- Differenze tra varianti
+- Errori comuni da evitare
+- Consigli reali
+
+H2: Tipologie disponibili
+- Spiegare le principali sottocategorie
+- Differenze tra prodotti
+- Quando scegliere uno rispetto a un altro
+
+H2: Applicazioni pratiche (casi reali)
+- Esempi concreti di utilizzo
+- Settori (artigiani, industria, fai da te, ecc.)
+
+H2: Vantaggi rispetto ad alternative
+- Perché scegliere questa categoria
+- Confronto implicito con soluzioni alternative
+
+H2: Brand principali (se presente brand)
+- Posizionare il brand nel contesto
+- Perché sceglierlo
+- Differenze rispetto ad altri brand
+
+H2: Consigli pratici di utilizzo
+- Best practice
+- Errori da evitare
+- Suggerimenti da esperto
+
+H2: FAQ (minimo 6-8 domande)
+- Domande REALI che un utente farebbe su Google
+- Risposte chiare e sintetiche
+- Ottimizzate per snippet e AI
+
+EXTRA (FONDAMENTALE)
+- Inserire concetti educativi
+- Spiegare il "perché" oltre al "cosa"
+- Anticipare dubbi dell'utente
+- Rispondere anche a domande non esplicite
+
+OUTPUT
+- Testo pronto per ecommerce
+- Nessun riferimento all'AI
+- Nessun contenuto duplicato
+- Nessuna struttura artificiale
+
+OBIETTIVO FINALE:
+Creare una pagina che:
+- intercetti traffico organico
+- venga citata dalle AI
+- aumenti il tempo sul sito
+- migliori il tasso di conversione
 
 [Alt_Categoria-HTML]
-Contenuto legato ai 5 maggiori problemi ricercati dai clienti per la categoria, con soluzione consigliata.
+Genera un contenuto legato ai 5 maggiori problemi ricercati dai clienti per questa categoria 
+ed esponi per ognuno la soluzione piu' adatta.
+
 
 Formato Output:
 JSON con chiave principale "OUTPUT"
