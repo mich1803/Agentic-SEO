@@ -2,11 +2,11 @@
 -(Codice_Articolo) Codice Articolo: [INSERISCI]
 -(Nome) Nome prodotto: [INSERISCI]
 -(Brand) (opzionale): [INSERISCI]
--(Categoria liv 1) Gruppo: (opzionale): [INSERISCI]
--(Categoria liv 2) Categoria (opzionale): [INSERISCI]
--(Categoria liv 3) Sottocategoria (opzionale): [INSERISCI]
+-(Categoria_1) Gruppo: (opzionale): [INSERISCI]
+-(Categoria_2) Categoria (opzionale): [INSERISCI]
+-(Categoria_3) Sottocategoria (opzionale): [INSERISCI]
 -(Descrizione) Descrizione esistente (opzionale): [INSERIRE]
--(Scheda Tecnica) scheda tecnica PDF (opzionale): [INSERIRE]
+-(Scheda_Tecnica) scheda tecnica PDF (opzionale): [INSERIRE]
 
 
 {Output Richiesto}
