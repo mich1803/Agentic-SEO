@@ -5,23 +5,26 @@
 {Output Richiesto}
 [Descrizione-HTML] --STILE HTML--
 Creare una descrizione prodotto altamente ottimizzata per:
--posizionamento su Google (SEO tradizionale)
--visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
--conversione utente (vendita)
+- posizionamento su Google (SEO tradizionale)
+- visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
+- conversione utente (vendita)
+- non inserire qui le FAQ
 
 
 [Istruzioni-HTML] --STILE HTML--
-Creare una descrizione Aggiuntiva con istruzioni di uso dell'articolo e dei consigli sull'utilizzodel prodotto altamente ottimizzata per:
+Creare una descrizione Aggiuntiva con istruzioni di uso dell'articolo e dei consigli sull'utilizzo del prodotto altamente ottimizzata per:
 -posizionamento su Google (SEO tradizionale)
 -visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
 -conversione utente (vendita)
+Inoltre inserisci delle Caratteristiche tecniche.
 
 
 [Dettagli-HTML] --STILE HTML--
 Creare una descrizione Dettagli ulteriori informazioni utili sul prodotto:
--posizionamento su Google (SEO tradizionale)
--visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
--conversione utente (vendita)
+- posizionamento su Google (SEO tradizionale)
+- visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
+- conversione utente (vendita)
+Inoltre aggiungi delle FAQ.
 
 
 [Descrizione_Tag] --ALTRO--
@@ -29,6 +32,7 @@ Generare la migliore Meta Description (Descrizione Tag) possibile per una pagina
 - aumentare il CTR su Google
 - migliorare la rilevanza SEO
 - essere comprensibile e citabile dalle AI (ChatGPT, Gemini, Perplexity)
+Alterna queste parole per iniziare la Descrizione Tag: Scopri, Valuta, Compra, Approfondisci e verbi del genere.
 
 REGOLE OBBLIGATORIE:
 
