@@ -1,5 +1,5 @@
 const OUTPUT_FIELDS = {
-  article: ["Descrizione-HTML", "Istruzioni-HTML", "Dettagli-HTML", "Descrizione_Tag", "Titolo_Tag"],
+  article: ["Descrizione-HTML", "Istruzioni-HTML", "Dettagli-HTML", "Descrizione_Tag", "Titolo_Tag", "Parole_Chiave"],
   category: ["Categoria-HTML", "Alt_Categoria-HTML"],
 };
 

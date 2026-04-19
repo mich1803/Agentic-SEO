@@ -67,6 +67,10 @@ Creare una meta description che:
 - sia coerente con il contenuto della pagina
 - migliori la visibilità anche nelle AI
 
+[Parole_Chiave] --ALTRO--
+Generare 8-10 parole chiave SEO pertinenti al prodotto, separate da virgole.
+Le parole chiave devono essere utili per ricerca organica e AI search.
+
 [Titolo_Tag]
 Generare il miglior Title Tag possibile per una pagina prodotto o categoria, ottimizzato per:
 - posizionamento su Google
@@ -118,6 +122,7 @@ esempio:
     "Istruzioni-HTML": "...",
     "Dettagli-HTML": "...",
     "Descrizione_Tag": "...",
-    "Titolo_Tag": "..."
+    "Titolo_Tag": "...",
+    "Parole_Chiave": "..."
   }
 }
