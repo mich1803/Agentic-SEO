@@ -4,35 +4,43 @@
 
 {Output Richiesto}
 [Descrizione-HTML] --STILE HTML--
-Creare una descrizione prodotto altamente ottimizzata per:
+Varia sempre l'introduzione della descrizione e non ripetere lo stesso schema.
+Crea una descrizione prodotto altamente ottimizzata per:
 - posizionamento su Google (SEO tradizionale)
 - visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
 - conversione utente (vendita)
-- non inserire qui le FAQ
 
 
 [Istruzioni-HTML] --STILE HTML--
-Creare una descrizione Aggiuntiva con istruzioni di uso dell'articolo e dei consigli sull'utilizzo del prodotto altamente ottimizzata per:
--posizionamento su Google (SEO tradizionale)
--visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
--conversione utente (vendita)
-Inoltre inserisci delle Caratteristiche tecniche.
-
-
-[Dettagli-HTML] --STILE HTML--
-Creare una descrizione Dettagli ulteriori informazioni utili sul prodotto:
+Crea un contenuto aggiuntivo con istruzioni e consigli pratici sull'utilizzo del prodotto, ottimizzato per:
 - posizionamento su Google (SEO tradizionale)
 - visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
 - conversione utente (vendita)
-Inoltre aggiungi delle FAQ.
+Inserisci anche le caratteristiche tecniche realmente disponibili.
+Individua almeno 5 caratteristiche rilevanti e sviluppale una per una, spiegando 5 motivi concreti per scegliere il prodotto e trasformandole in contenuti utili e ricercabili.
+Varia sempre l'introduzione e non ripetere lo stesso schema.
+Firma il contenuto con:
+- Contenuto elaborato con ToolX v2.0 e verificato manualmente da Romolo Magrini, esperto del settore Abbigliamento da lavoro e Safety.
 
+[Dettagli-HTML] --STILE HTML--
+Crea una sezione con ulteriori informazioni utili sul prodotto, ottimizzata per:
+- posizionamento su Google (SEO tradizionale)
+- visibilità nelle risposte delle AI (ChatGPT, Gemini, Perplexity)
+- conversione utente (vendita)
+Varia ogni volta l'introduzione e non ripetere lo stesso schema.
+
+H2: FAQ (minimo 4-5 domande che rispondano a dubbi reali e aiutino l'utente a valutare l'acquisto)
+- Domande reali degli utenti
+- Risposte chiare e sintetiche
+- Ottimizzate per featured snippet e AI
 
 [Descrizione_Tag] --ALTRO--
-Generare la migliore Meta Description (Descrizione Tag) possibile per una pagina prodotto, ottimizzata per:
+Genera la migliore Meta Description (Descrizione Tag) possibile per una pagina prodotto, ottimizzata per:
 - aumentare il CTR su Google
 - migliorare la rilevanza SEO
 - essere comprensibile e citabile dalle AI (ChatGPT, Gemini, Perplexity)
-Alterna queste parole per iniziare la Descrizione Tag: Scopri, Valuta, Compra, Approfondisci e verbi del genere.
+Varia ogni volta l'introduzione e non ripetere lo stesso schema.
+Alterna verbi iniziali come: Scopri, Valuta, Scegli, Acquista, Approfondisci.
 
 REGOLE OBBLIGATORIE:
 
@@ -41,6 +49,7 @@ REGOLE OBBLIGATORIE:
 - Evitare troncamenti nei risultati Google
 
 2. STRUTTURA SEO + CTR
+- Varia sempre l'introduzione e non ripetere lo stesso schema
 - Iniziare con un verbo d'azione (es: Scopri, Scegli, Trova, Acquista)
 - Inserire la keyword principale in modo naturale
 - Inserire un beneficio concreto
@@ -60,6 +69,7 @@ REGOLE OBBLIGATORIE:
 - Tutto maiuscolo
 - Simboli inutili (! ? ecc.)
 - Frasi troppo promozionali o aggressive
+- Ripetizioni di frasi troppo simili da testo a testo, ed evitare introduzioni con le stesse parole.
 
 OBIETTIVO FINALE:
 Creare una meta description che:
@@ -68,11 +78,11 @@ Creare una meta description che:
 - migliori la visibilità anche nelle AI
 
 [Parole_Chiave] --ALTRO--
-Generare 8-10 parole chiave SEO pertinenti al prodotto, separate da virgole.
+Genera 8-10 parole chiave SEO pertinenti al prodotto, separate da virgole.
 Le parole chiave devono essere utili per ricerca organica e AI search.
 
 [Titolo_Tag]
-Generare il miglior Title Tag possibile per una pagina prodotto o categoria, ottimizzato per:
+Genera il miglior Title Tag possibile per una pagina prodotto, ottimizzato per:
 - posizionamento su Google
 - massimizzazione del CTR (click)
 - comprensione da parte delle AI (ChatGPT, Gemini, Perplexity)
@@ -105,6 +115,9 @@ REGOLE OBBLIGATORIE:
 - Tutto maiuscolo
 - Simboli inutili (!, ?, ecc.)
 
+6. NON INVENTARE INFORMAZIONI
+Se le informazioni disponibili sono scarse, consulta fonti online attendibili e rielabora solo concetti reali e verificabili, senza pubblicizzare le fonti nel contenuto finale.
+
 OUTPUT RICHIESTO:
 
 
@@ -115,7 +128,7 @@ Creare un Title Tag che:
 - sia perfettamente leggibile e naturale
 
 
-esempio:
+Esempio:
 {
   "OUTPUT": {
     "Descrizione-HTML": "...",

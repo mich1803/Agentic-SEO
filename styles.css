@@ -27,6 +27,7 @@ button, .link-btn {
 }
 .back { margin-bottom: 10px; background: #374151; }
 form { margin-top: 16px; display: grid; gap: 12px; }
+.form-note { margin: -4px 0 0; color: #4b5563; font-size: 0.85rem; }
 label { display: grid; gap: 6px; font-size: 0.95rem; }
 input, select {
   border: 1px solid #d1d5db;

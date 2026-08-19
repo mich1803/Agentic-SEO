@@ -3,28 +3,59 @@
 {{INPUT_BLOCK}}
 
 Nota:
--Se hai in input solo Categoria_1: scrivi una descrizione solo per Categoria_1 (Gruppo), concepita come pagina madre generale, con taglio introduttivo, informativo e SEO. Il testo dovrà essere utile come contenitore delle future Categoria_2, senza scendere troppo in dettagli specifici di singoli prodotti.
--Se hai in input Categoria_1 e Categoria_2: scrivi una descrizione focalizzata soprattutto su Categoria_2, mantenendo coerenza con Categoria_1. Il testo dovrà spiegare in modo chiaro a cosa serve questa categoria, quali prodotti comprende, per quali utilizzi è adatta, quali benefici offre e in quali contesti viene scelta. Categoria_1 dovrà funzionare come contesto generale, mentre Categoria_2 sarà il vero focus SEO e informativo della pagina.
--Se hai in input Categoria_1, Categoria_2 e Categoria_3: scrivi una descrizione specifica per Categoria_3, trattandola come livello più verticale e preciso della navigazione. Il testo dovrà essere più mirato, concreto e orientato all’intento di ricerca dell’utente, spiegando caratteristiche, destinazioni d’uso, vantaggi, applicazioni tipiche e differenze implicite rispetto ad altre sottocategorie vicine. Categoria_1 e Categoria_2 dovranno essere richiamate solo come contesto semantico.
--Se hai in input Categoria_1, Categoria_2, Categoria_3 e Brand: scrivi una descrizione altamente focalizzata sulla combinazione tra Categoria_3 e brand, mettendo in evidenza il posizionamento del marchio, i punti di forza, la tipologia di offerta, gli eventuali elementi distintivi del brand in quella specifica categoria e il valore percepito per l’utente finale. Il testo dovrà risultare naturale, informativo e commerciale, senza tono eccessivamente promozionale.
+-Se hai in input solo Categoria_1: scrivi una descrizione solo per Categoria_1 (Gruppo),
+concepita come pagina madre generale, con taglio introduttivo, informativo e SEO. Il testo dovrà essere utile come contenitore delle future Categoria_2,
+senza scendere troppo in dettagli specifici di singoli prodotti.
+
+-Se hai in input Categoria_1 e Categoria_2: scrivi una descrizione focalizzata soprattutto su Categoria_2,
+mantenendo coerenza con Categoria_1. Il testo dovrà spiegare in modo chiaro a cosa serve questa categoria, quali prodotti comprende,
+per quali utilizzi è adatta, quali benefici offre e in quali contesti viene scelta. Categoria_1 dovrà funzionare come contesto generale,
+mentre Categoria_2 sarà il vero focus SEO e informativo della pagina.
+
+-Se hai in input Categoria_1, Categoria_2 e Categoria_3: scrivi una descrizione specifica per Categoria_3, trattandola come livello più
+verticale e preciso della navigazione. Il testo dovrà essere più mirato, concreto e orientato all’intento di ricerca dell’utente, spiegando
+caratteristiche, destinazioni d’uso, vantaggi, applicazioni tipiche e differenze implicite rispetto ad altre sottocategorie vicine.
+Categoria_1 e Categoria_2 dovranno essere richiamate solo come contesto semantico.
+
+-Se hai in input Categoria_1, Categoria_2, Categoria_3 e Brand: scrivi una descrizione altamente focalizzata sulla combinazione tra Categoria_3 e brand,
+mettendo in evidenza il posizionamento del marchio, i punti di forza, la tipologia di offerta, gli eventuali elementi distintivi del brand in
+quella specifica categoria e il valore percepito per l’utente finale. Il testo dovrà risultare naturale, informativo e commerciale, senza tono eccessivamente promozionale.
+
+Se il campo "Descrizione" è valorizzato, usa il testo descrittivo o il contenuto recuperato dal link come fonte da rielaborare.
+Se il campo "Scheda_Tecnica" è valorizzato, usa il contenuto della pagina o del PDF recuperato come fonte pertinente.
+Il link può anche rimandare all'elenco degli articoli della combinazione di categorie e brand: usa i dati reali dei prodotti per arricchire il contenuto.
+Applica lo stesso criterio al campo "Informazioni", che può contenere una pagina, un PDF o una lista di articoli correlati.
 
 {Output}
 
-[Categoria-HTML]
+[Descrizione]
 OBIETTIVO:
 Creare una descrizione di categoria altamente performante per:
 - posizionamento su Google (SEO tradizionale)
-- visibilità nelle AI (ChatGPT, Gemini, Perplexity)
+- visibilità nelle AI (ChatGPT, Gemini, Perplexity, GEO)
 - conversione utente (vendita)
 
 Il contenuto deve trasformare la categoria in una guida completa, diventando un punto di riferimento informativo (stile "Aranzulla del Brico").
+Qualsiasi dato citato dovrà essere vero e non inventato. Puoi rielaborare liberamente solo il modo in cui i dati reali vengono inseriti in una descrizione orientata all’utilità del cliente.
 
 
-STRUTTURA OBBLIGATORIA
+ESEMPIO STRUTTURA DEL CONTENUTO,
+DA VARIARE TASSATIVAMENTE DI VOLTA IN VOLTA NELLA SEQUENZA E NELLA STRUTTURA DEL BLOCCO DI CONTENUTI
+CHE NON DEVE APPARIRE SEMPRE LO STESSO MA DEVE ESSERE DI VOLTA IN VOLTA ORIGINALE ANCHE NELLA STRUTTURA,
+MA SEMPRE CON ORDINE ED IN MANIERA SENSATA,
+ESEMPIO, TALVOLTA "H2: Tipologie disponibili" PUÒ ANCHE ESSERE POSTO DOPO "H2: Come scegliere il prodotto giusto"
+e tali titoli devono essere espressi ogni volta in maniera differente per evitare che si riconosca lo stesso schema nel blocco dei contenuti,
+quindi ad esempio "H2: Tipologie disponibili" può diventare "H2: Tipo a disposizione"
+
+Il testo generato non deve essere percepito come un contenuto creato da intelligenza artificiale,
+quindi evitare le frasi troppo comuni , cerca di esprimerti in maniera originale ed intelligente,
+fai una piccola ricerca online e costruisci il contenuto a partire dalle query più comuni collegate a questo argomento,
+soddisfandone per quanto possibile le domande con risposte appropriate.
+
 
 H1: Nome categoria ottimizzato SEO (includere brand se presente)
 
-INTRODUZIONE (150-250 parole)
+INTRODUZIONE DISCORSIVA (250-350 parole)
 - Spiegare cosa sono i prodotti della categoria
 - A cosa servono
 - Per chi sono ideali
@@ -33,37 +64,39 @@ INTRODUZIONE (150-250 parole)
   "ideale per…"
   "perfetto per chi…"
   "consigliato in caso di…"
+- Ricercare 5 frasi-query tra le più ricercate per accedere a queste categorie e utilizzarle in un testo di senso compiuto
+e che aumenti la ricercabilità della pagina
 
-H2: Cosa sono e a cosa servono
+H2: Cosa sono e a cosa servono i prodotti di questa categoria(variare il titolo alternando con altre frasi con lo stesso significato)
 - Definizione semplice
 - Problemi che risolvono
 - Perché sono importanti
 
-H2: Come scegliere il prodotto giusto
+H2: Come scegliere il prodotto giusto per questa particolare categoria(variare il titolo alternando con altre frasi con lo stesso significato)
 - Guida pratica
 - Differenze tra varianti
 - Errori comuni da evitare
 - Consigli reali
 
-H2: Tipologie disponibili
+H2: Tipologie disponibili (variare il titolo alternando con altre frasi con lo stesso significato)
 - Spiegare le principali sottocategorie
 - Differenze tra prodotti
 - Quando scegliere uno rispetto a un altro
 
-H2: Applicazioni pratiche (casi reali)
+H2: Applicazioni pratiche (casi reali) (variare il titolo alternando con altre frasi con lo stesso significato)
 - Esempi concreti di utilizzo
 - Settori (artigiani, industria, fai da te, ecc.)
 
-H2: Vantaggi rispetto ad alternative
+H2: Vantaggi rispetto ad alternative (variare il titolo alternando con altre frasi con lo stesso significato)
 - Perché scegliere questa categoria
 - Confronto implicito con soluzioni alternative
 
-H2: Brand principali (se presente brand)
+H2: Brand principali (se presente brand) (variare il titolo alternando con altre frasi con lo stesso significato)
 - Posizionare il brand nel contesto
 - Perché sceglierlo
 - Differenze rispetto ad altri brand
 
-H2: Consigli pratici di utilizzo
+H2: Consigli pratici di utilizzo (variare il titolo alternando con altre frasi con lo stesso significato)
 - Best practice
 - Errori da evitare
 - Suggerimenti da esperto
@@ -81,9 +114,12 @@ EXTRA (FONDAMENTALE)
 
 OUTPUT
 - Testo pronto per ecommerce
+- La chiave "Descrizione" deve contenere HTML valido e pronto per la colonna "Categoria-HTML" (tag <h1>, <h2>, <h3>, <p>, <ul> e <li> quando appropriati)
 - Nessun riferimento all'AI
 - Nessun contenuto duplicato
 - Nessuna struttura artificiale
+- Nessuna sequenza di caratteri che facciano intuire l'utilizzo di AI
+
 
 OBIETTIVO FINALE:
 Creare una pagina che:
@@ -92,18 +128,77 @@ Creare una pagina che:
 - aumenti il tempo sul sito
 - migliori il tasso di conversione
 
-[Alt_Categoria-HTML]
-Genera un contenuto legato ai 5 maggiori problemi ricercati dai clienti per questa categoria 
-ed esponi per ognuno la soluzione piu' adatta.
+[Descrizione Tag]
+Obiettivo: genera una descrizione breve per pagina categoria e-commerce Bricofer.
+
+Lunghezza: minimo 150 caratteri, massimo 220 caratteri.
+Stile: commerciale,
+chiaro, naturale, SEO-oriented, adatto anche a ricerche AI.
+
+Contenuto obbligatorio:
+- keyword principale della categoria;
+- uso principale o settore di utilizzo;
+- 2-4 varianti/caratteristiche importanti;
+
+- beneficio concreto per il cliente.
+Divieti:
+- non superare 220 caratteri;
+
+- non usare frasi generiche tipo “ampia gamma” o “migliori prezzi”;
+- non fare keyword stuffing;
+
+- non usare elenco puntato;
+
+- non inserire il nome Bricofer salvo richiesta esplicita.
+
+Output: una sola frase pronta da copiare.
+
+
+[Titolo Tag]
+Obiettivo: genera un titolo breve per pagina categoria e-commerce Bricofer.
+
+Lunghezza: minimo 45 caratteri, massimo 65 caratteri.
+
+Stile: chiaro, commerciale, SEO-oriented, naturale, adatto anche a ricerche AI.
+
+Contenuto obbligatorio:
+
+- keyword principale della categoria;
+
+- eventuale caratteristica forte: materiale, uso, certificazione, settore o brand;
+
+- intento commerciale implicito, senza frasi promozionali eccessive.
+
+Divieti:
+
+- non superare 65 caratteri;
+
+- non usare keyword stuffing;
+
+- non usare tutto maiuscolo;
+
+- non usare slogan generici;
+
+- non inserire “prezzi”, “offerte” o “migliori prezzi” salvo richiesta esplicita;
+
+- non inserire il nome Bricofer salvo richiesta esplicita.
+
+Output: un solo titolo pronto da copiare.
 
 
 Formato Output:
-JSON con chiave principale "OUTPUT"
+Devi restituire SOLO un JSON valido, senza markdown, senza commenti e senza testo fuori dal JSON.
+La chiave principale deve essere "OUTPUT".
+Le chiavi interne devono chiamarsi esattamente:
+- "Descrizione"
+- "Descrizione Tag"
+- "Titolo Tag"
 
-esempio:
+Esempio valido:
 {
   "OUTPUT": {
-    "Categoria-HTML": "...",
-    "Alt_Categoria-HTML": "..."
+    "Descrizione": "...",
+    "Descrizione Tag": "...",
+    "Titolo Tag": "..."
   }
 }

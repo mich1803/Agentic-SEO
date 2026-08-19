@@ -1,11 +1,27 @@
 const OUTPUT_FIELDS = {
-  article: ["Descrizione-HTML", "Istruzioni-HTML", "Dettagli-HTML", "Descrizione_Tag", "Titolo_Tag", "Parole_Chiave"],
-  category: ["Categoria-HTML", "Alt_Categoria-HTML"],
+  article: [
+    { column: "Descrizione-HTML", jsonKey: "Descrizione-HTML" },
+    { column: "Istruzioni-HTML", jsonKey: "Istruzioni-HTML" },
+    { column: "Dettagli-HTML", jsonKey: "Dettagli-HTML" },
+    { column: "Descrizione_Tag", jsonKey: "Descrizione_Tag" },
+    { column: "Titolo_Tag", jsonKey: "Titolo_Tag" },
+    { column: "Parole_Chiave", jsonKey: "Parole_Chiave" },
+  ],
+  category: [
+    { column: "Categoria-HTML", jsonKey: "Descrizione" },
+    { column: "Descrizione Tag", jsonKey: "Descrizione Tag" },
+    { column: "Titolo Tag", jsonKey: "Titolo Tag" },
+  ],
 };
 
 const INPUT_ORDER = {
   article: ["Codice_Articolo", "Nome", "Brand", "Categoria_1", "Categoria_2", "Categoria_3", "Descrizione", "Scheda_Tecnica"],
-  category: ["Categoria_1", "Categoria_2", "Categoria_3", "Brand", "Descrizione"],
+  category: ["Categoria_1", "Categoria_2", "Categoria_3", "Brand", "Descrizione", "Scheda_Tecnica", "Informazioni"],
+};
+
+const URL_SOURCE_FIELDS = {
+  article: ["Descrizione", "Scheda_Tecnica"],
+  category: ["Descrizione", "Scheda_Tecnica", "Informazioni"],
 };
 
 const sections = {
@@ -100,27 +116,28 @@ async function handleSubmit(event, mode) {
       rowObj[key] = (row[idx] ?? "").toString().trim();
     }
 
-    if (rowObj.Descrizione && isLikelyUrlOnly(rowObj.Descrizione)) {
-      rowObj.Descrizione = await fetchUrlText(rowObj.Descrizione);
-    }
-    if (rowObj.Scheda_Tecnica && isLikelyUrlOnly(rowObj.Scheda_Tecnica)) {
-      rowObj.Scheda_Tecnica = await fetchUrlText(rowObj.Scheda_Tecnica);
-    }
+    await Promise.all(
+      URL_SOURCE_FIELDS[mode].map(async (field) => {
+        if (rowObj[field] && isLikelyUrlOnly(rowObj[field])) {
+          rowObj[field] = await fetchUrlText(rowObj[field]);
+        }
+      }),
+    );
 
     const userPrompt = buildPrompt(mode, promptTemplate, rowObj);
 
     let parsed;
     try {
-      parsed = await callOpenAI({ model, apiKey, systemPrompt, userPrompt });
+      parsed = await callOpenAI({ mode, model, apiKey, systemPrompt, userPrompt });
     } catch (err) {
       parsed = { OUTPUT: {} };
       console.error(`Errore riga ${r + 1}:`, err);
     }
 
-    for (const field of OUTPUT_FIELDS[mode]) {
-      const value = (parsed.OUTPUT?.[field] ?? "").toString();
-      const outIdx = headerIndex.get(field);
-      const lenIdx = headerIndex.get(`len(${field})`);
+    for (const { column, jsonKey } of OUTPUT_FIELDS[mode]) {
+      const value = (parsed.OUTPUT?.[jsonKey] ?? "").toString();
+      const outIdx = headerIndex.get(column);
+      const lenIdx = headerIndex.get(`len(${column})`);
       row[outIdx] = value;
       row[lenIdx] = value.length;
     }
@@ -152,7 +169,15 @@ async function handleSubmit(event, mode) {
   statusText.textContent = "Completato. File generato.";
 }
 
-async function callOpenAI({ model, apiKey, systemPrompt, userPrompt }) {
+async function callOpenAI({ mode, model, apiKey, systemPrompt, userPrompt }) {
+  if (mode === "category") {
+    return callOpenAIResponses({ model, apiKey, systemPrompt, userPrompt });
+  }
+
+  return callOpenAIChatCompletions({ model, apiKey, systemPrompt, userPrompt });
+}
+
+async function callOpenAIChatCompletions({ model, apiKey, systemPrompt, userPrompt }) {
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -177,6 +202,91 @@ async function callOpenAI({ model, apiKey, systemPrompt, userPrompt }) {
   const json = await response.json();
   const content = json.choices?.[0]?.message?.content || "{}";
   return safeParseJson(content);
+}
+
+async function callOpenAIResponses({ model, apiKey, systemPrompt, userPrompt }) {
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model,
+      instructions: systemPrompt,
+      input: userPrompt,
+      tools: [
+        {
+          type: "web_search",
+          search_context_size: "low",
+          user_location: {
+            type: "approximate",
+            country: "IT",
+          },
+        },
+      ],
+      text: {
+        format: {
+          type: "json_schema",
+          name: "category_content",
+          strict: true,
+          schema: {
+            type: "object",
+            properties: {
+              OUTPUT: {
+                type: "object",
+                properties: {
+                  Descrizione: {
+                    type: "string",
+                    description: "Descrizione HTML completa della categoria.",
+                  },
+                  "Descrizione Tag": {
+                    type: "string",
+                    description: "Una sola frase SEO tra 150 e 220 caratteri.",
+                    pattern: "^[\\s\\S]{150,220}$",
+                  },
+                  "Titolo Tag": {
+                    type: "string",
+                    description: "Titolo SEO naturale tra 45 e 65 caratteri.",
+                    pattern: "^[\\s\\S]{45,65}$",
+                  },
+                },
+                required: ["Descrizione", "Descrizione Tag", "Titolo Tag"],
+                additionalProperties: false,
+              },
+            },
+            required: ["OUTPUT"],
+            additionalProperties: false,
+          },
+        },
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const txt = await response.text();
+    throw new Error(`OpenAI API error ${response.status}: ${txt}`);
+  }
+
+  const json = await response.json();
+  const content = extractResponsesText(json);
+  return safeParseJson(content);
+}
+
+function extractResponsesText(response) {
+  if (typeof response.output_text === "string" && response.output_text.trim()) {
+    return response.output_text;
+  }
+
+  for (const item of response.output || []) {
+    for (const part of item.content || []) {
+      if (part.type === "output_text" && typeof part.text === "string") {
+        return part.text;
+      }
+    }
+  }
+
+  return "{}";
 }
 
 function safeParseJson(content) {
@@ -213,9 +323,9 @@ async function fetchText(path) {
 
 function ensureOutputColumns(rows, headerIndex, mode) {
   const headers = rows[0];
-  for (const field of OUTPUT_FIELDS[mode]) {
-    addHeaderIfMissing(headers, headerIndex, field);
-    addHeaderIfMissing(headers, headerIndex, `len(${field})`);
+  for (const { column } of OUTPUT_FIELDS[mode]) {
+    addHeaderIfMissing(headers, headerIndex, column);
+    addHeaderIfMissing(headers, headerIndex, `len(${column})`);
   }
 
   for (let i = 1; i < rows.length; i++) {

@@ -4,7 +4,7 @@ Web-app minimale per generare contenuti SEO in massa da template Excel (`.xlsx`)
 - **Articoli prodotto**
 - **Categorie ecommerce**
 
-L'app legge ogni riga del template, invia una chiamata a OpenAI con i prompt dedicati, riceve un JSON e scrive i campi di output nello stesso foglio, compilando anche le colonne `len(...)` con la lunghezza in caratteri.
+L'app legge ogni riga del template, invia una chiamata a OpenAI con i prompt dedicati, riceve un JSON strutturato e scrive i campi di output nello stesso foglio, compilando anche le colonne `len(...)` con la lunghezza in caratteri.
 
 ---
 
@@ -55,7 +55,7 @@ Ogni sezione ha il pulsante per scaricare il template Excel ufficiale:
 2. Scarica il template con il pulsante dedicato.
 3. Compila una o più righe nel file `.xlsx`.
 4. Nel form inserisci:
-   - Modello OpenAI (attualmente `gpt-4.1-mini`)
+   - Modello OpenAI
    - API key OpenAI (campo password)
    - Upload del template compilato
 5. Clicca **Genera file output**.
@@ -79,7 +79,16 @@ Alla fine viene scaricato un file:
 
 ## 5) Flusso "Genera Contenuti per Categoria"
 
-Stessi passaggi del flusso articoli, ma con prompt categoria e output categoria.
+Il template categoria accetta i campi `Categoria_1`, `Categoria_2`, `Categoria_3`, `Brand`, `Descrizione`, `Scheda_Tecnica` e `Informazioni`.
+
+Per ogni riga, il flusso categoria:
+- recupera il contenuto degli URL presenti in `Descrizione`, `Scheda_Tecnica` e `Informazioni` (incluse fonti PDF supportate dal servizio di estrazione);
+- usa la Responses API con ricerca web per verificare dati e query correlate;
+- richiede un JSON strutturato con `Descrizione`, `Descrizione Tag` e `Titolo Tag`;
+- scrive `Descrizione` nella colonna Excel `Categoria-HTML`;
+- crea anche `len(Categoria-HTML)`, `len(Descrizione Tag)` e `len(Titolo Tag)`.
+
+`Descrizione Tag` deve essere compresa tra 150 e 220 caratteri; `Titolo Tag` tra 45 e 65 caratteri. Il precedente campo `Alt_Categoria-HTML` non viene più generato.
 
 Output finale scaricato come:
 - `category_output_<timestamp>.xlsx`
@@ -111,6 +120,7 @@ I file prompt sono stati resi più pratici con il placeholder `{{INPUT_BLOCK}}`,
 ## 8) Limiti noti
 
 - La lettura contenuto URL dipende dall'accessibilità del link.
+- La ricerca web del flusso categorie usa lo strumento OpenAI dedicato e può incidere sui costi API.
 - Alcuni siti possono bloccare il recupero automatico del testo.
 - Se la libreria CDN non è raggiungibile, il parsing `.xlsx` non parte.
 
