@@ -25,6 +25,7 @@ button, .link-btn {
   text-decoration: none;
   display: inline-block;
 }
+button:disabled { opacity: 0.6; cursor: wait; }
 .back { margin-bottom: 10px; background: #374151; }
 form { margin-top: 16px; display: grid; gap: 12px; }
 .form-note { margin: -4px 0 0; color: #4b5563; font-size: 0.85rem; }
@@ -54,3 +55,37 @@ input, select {
 }
 #progress-bar { width: 0%; height: 100%; background: #111827; }
 #download-output { margin-top: 12px; }
+.log-panel {
+  margin-top: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  background: #f3f4f6;
+  border-bottom: 1px solid #d1d5db;
+}
+.secondary-btn {
+  padding: 6px 9px;
+  background: #4b5563;
+  font-size: 0.8rem;
+}
+#generation-log {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 180px;
+  max-height: 340px;
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #111827;
+  color: #e5e7eb;
+  font: 0.82rem/1.5 Consolas, "Courier New", monospace;
+}
